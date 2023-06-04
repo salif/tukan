@@ -1,0 +1,9 @@
+{% extends "index.html" %}
+
+{% block main %}
+<section class="card page">
+    {%- for page in term.pages -%}
+    <a href="{{page.permalink}}"> {{page.title}} </a><br>
+    {%- endfor -%}
+</section>
+{% endblock main %}
