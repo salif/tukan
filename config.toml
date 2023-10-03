@@ -19,3 +19,6 @@ title = "Toucan theme"
 title_pic = "/favicon.ico"
 description = "Theme for Zola inspired from Pelican website theme"
 license = """Content under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA</a> Licence"""
+
+[extra.theme]
+read_more = "Read more"

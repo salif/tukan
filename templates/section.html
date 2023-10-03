@@ -18,7 +18,10 @@
   <section class="card preview">
       <div class="date">{{ article.date }}</div>
       <h1><a href="{{article.permalink}}">{{ article.title }}</a></h1>
-      <div>{{ article.content | safe | striptags | truncate(length=1000) }}</div> {# TODO use truncate html when ready #}
+      <div>{{ article.description }}</div>
+      <br>
+      <div><a class="button" href="{{article.permalink}}">{{config.extra.theme.read_more}}</a></div>
+      <br>
   </section>
   {% endif %}
 {% endif %}
