@@ -15,7 +15,7 @@
     <header><a href="{{config.base_url}}"><h1><img id="title_pic" alt="" src="{{config.extra.title_pic}}"/>{{config.extra.title}}</h1></a></header>
     <nav>{{ macros::nav() }}</nav>
     <main>{% block main %}{% endblock main %}</main>
-    <footer>{{ macros::footer() }}</footer>
+    <footer>{% include "footer.html" %}</footer>
   </div>
 </body>
 </html>
