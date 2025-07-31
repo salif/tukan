@@ -26,7 +26,7 @@
         {% if article.description %}
           {{ article.description | truncate(length=300)}}
         {% else %}
-          {{ article.content | safe | striptags | truncate(length=300)}} {# TODO use truncate html when ready #}
+          {{ article.content | safe | striptags | truncate(length=100)}} {# TODO use truncate html when ready #}
         {% endif %}
       </p>
     </div>
