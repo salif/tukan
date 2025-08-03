@@ -2,6 +2,7 @@
 {% if not type %}{% set type="neutral" %}{% endif %}
 {% if not size %}{% set size="small" %}{% endif %}
 
+{%- if title %}<div class="note-title"><b>Definition:</b> <i>{{title}}</i></div>{% endif %}
 <div class="note
 {%- if display == 'icon' %} note-icon note-icon-{{size}} note-icon-{{type}}
 {%- elif display == 'block' %} note-block note-{{type}}
