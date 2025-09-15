@@ -14,7 +14,7 @@ tags = ["Blog", "Multilingual"]
 # Use snake_casing to be consistent with the rest of Zola
 [extra]
 # Put all your custom variables here
-title_pic = "$BASE_URL/favicon.ico"
+title_pic = "/favicon.ico"
 
 # The theme author info: you!
 [author]

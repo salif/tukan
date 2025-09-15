@@ -1,18 +1,19 @@
 {% import "macros.html" as macros %}
-
+{%- set g_trans = load_data(path=`i18n/`~lang~`.json`, format=`json`) %}
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% block title %}{{config.extra.title}}{% endblock title %}</title>
-  <meta name="description" content="{% block description %}{{config.extra.description}}{% endblock description %}">
-  <link rel="stylesheet" type="text/css" href="{{get_url(path=`base.css`)}}">
+  <title>{% block title %}{{ config.title | default(value="") }}{% endblock title %}</title>
+  <meta name="description" content="{% block description %}{{ config.description | default(value=``) }}{% endblock description %}">
+  <link rel="stylesheet" type="text/css" href="{{ get_url(path=`base.css`, cachebust=true) }}">
   {% block head %}{% endblock head %}
 </head>
 <body>
   <div id="container">
-    <header><a href="{{config.base_url}}"><h1><img id="title_pic" alt="" src="{{config.extra.title_pic}}"/>{{config.extra.title}}</h1></a></header>
+    <header><a href="{{ get_url(path=`/`, lang=lang) }}"><h1><img id="title_pic" alt="" src="{{
+      get_url(path=config.extra.title_pic) }}" />{{ config.title | default(value="") }}</h1></a></header>
     <nav>{{ macros::nav() }}</nav>
     <main>{% block main %}{% endblock main %}</main>
     <footer>{% include "footer.html" %}</footer>

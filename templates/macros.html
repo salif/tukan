@@ -1,10 +1,12 @@
 {# === NAV ===#}
 {% macro nav() %}
-{% set index = get_section(path="_index.md") %}
-{% for s in index.subsections %}{% set subsection = get_section(path=s) %}<a href="{{ subsection.permalink }}"
-    {% if current_path %}{% if current_path is starting_with(subsection.path) %}class="active"{% endif %}{% endif %}>
-    {{subsection.title}}
-</a>{% endfor %}
+{% set index = get_section(path="_index.md", lang=lang) %}
+{% for s in index.subsections %}{% set subsection = get_section(path=s) %}
+<a href="{{ subsection.permalink | escape_xml | safe }}"
+{%- if current_path and current_path is starting_with(subsection.path) %} class="active"{% endif %}>
+  {{ subsection.title }}
+</a>
+{%- endfor %}
 {% endmacro nav %}
 
 {# === TAGS ===#}
@@ -18,7 +20,7 @@
 {% macro feed(feed) %}
 {# 'feed' must be defined by the template including this one #}
 {% for article in feed %}
-  <a href="{{ article.permalink }}" class="feed-link">
+  <a href="{{ article.permalink | escape_xml | safe }}" class="feed-link">
     <div>
       <div class="date">{{ article.date }}</div>
       <h3>{{ article.title }}</h3>
@@ -41,9 +43,9 @@
 
 {# === KATEX ===#}
 {% macro katex() %}
-<link rel="stylesheet" href="{{ get_url(path=`katex.css`) }}">
-<script defer src="{{ get_url(path=`katex.js`)}}"></script>
-<script defer src="{{ get_url(path=`auto-render.js`) }}"></script>
+<link rel="stylesheet" href="{{ get_url(path=`katex.css`, cachebust=true) }}">
+<script defer src="{{ get_url(path=`katex.js`, cachebust=true) }}"></script>
+<script defer src="{{ get_url(path=`auto-render.js`, cachebust=true) }}"></script>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         renderMathInElement(document.body, {
@@ -55,3 +57,13 @@
     });
 </script>
 {% endmacro katex %}
+
+{%- macro tr(key, d) %}{%
+  if d[key]["value"] %}{{
+    d[key]["value"] | safe }}{%
+  elif d[key]["fallback"] %}{{
+    d[key]["fallback"] | safe }}{%
+  else %}{{
+    throw(message="No translation for key: " ~ key) }}{%
+  endif %}
+{%- endmacro tr -%}

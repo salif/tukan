@@ -1,8 +1,20 @@
 # The URL the site will be built for
 base_url = "https://salif.github.io/zola-themes-collection/demo/tukan/"
 
-# Whether to automatically compile all Sass files in the sass directory
+default_language = "en"
 compile_sass = true
+minify_html = false
+exclude_paginated_pages_in_sitemap = "all"
+hard_link_static = false
+generate_sitemap = true
+generate_robots_txt = true
+
+title = "Tukan theme"
+description = "Theme for Zola inspired from Pelican website theme"
+
+[languages.bg]
+title = "Тукан"
+description = "Тема за сайтове за Зола"
 
 # Whether to do syntax highlighting
 # Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
@@ -15,10 +27,5 @@ build_search_index = false
 
 [extra]
 # Put all your custom variables here
-title = "Tukan theme"
-title_pic = "$BASE_URL/favicon.ico"
-description = "Theme for Zola inspired from Pelican website theme"
+title_pic = "/favicon.ico"
 license = """Content under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA</a> Licence"""
-
-[extra.theme]
-read_more = "Read more"

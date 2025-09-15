@@ -17,10 +17,10 @@
   {% if article %}
   <section class="card preview">
       <div class="date">{{ article.date }}</div>
-      <h1><a href="{{article.permalink}}">{{ article.title }}</a></h1>
+      <h1><a href="{{ article.permalink | escape_xml | safe }}">{{ article.title }}</a></h1>
       <div>{{ article.description }}</div>
       <br>
-      <div><a class="button" href="{{article.permalink}}">{{config.extra.theme.read_more}}</a></div>
+      <div><a class="button" href="{{ article.permalink | escape_xml | safe }}">{{ macros::tr(key=`read_more`, d=g_trans) }}</a></div>
       <br>
   </section>
   {% endif %}

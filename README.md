@@ -22,6 +22,17 @@ theme = "tukan"
 
 ## Usage
 
+You can personalize the following options in your `config.toml`:
+
+```toml
+title = ""
+description = ""
+
+[extra]
+title_pic = "/favicon.ico"
+license = """Content under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA</a> Licence"""
+```
+
 Categories will be added to the menu, and all articles from categories with
 
 ```toml
@@ -29,13 +40,3 @@ transparent = true
 ```
 
 will be listed in the home page.
-
-You can personalize the following options :
-
-```toml
-[extra]
-title = "Tukan theme"
-title_pic = "$BASE_URL/favicon.ico"
-description = "Theme for Zola inspired from Pelican website theme"
-license = """Content under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA</a> Licence"""
-```
