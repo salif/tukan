@@ -41,9 +41,9 @@
 
 {# === KATEX ===#}
 {% macro katex() %}
-<link rel="stylesheet" href="{{ get_url(path="katex.css") }}">
-<script defer src="{{ get_url(path="katex.js")}}"></script>
-<script defer src="{{ get_url(path="auto-render.js") }}"></script>
+<link rel="stylesheet" href="{{ get_url(path=`katex.css`) }}">
+<script defer src="{{ get_url(path=`katex.js`)}}"></script>
+<script defer src="{{ get_url(path=`auto-render.js`) }}"></script>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         renderMathInElement(document.body, {

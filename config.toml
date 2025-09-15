@@ -1,5 +1,5 @@
 # The URL the site will be built for
-base_url = "https://toucan.coinduf.eu/"
+base_url = "https://salif.github.io/zola-themes-collection/demo/tukan/"
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
@@ -15,8 +15,8 @@ build_search_index = false
 
 [extra]
 # Put all your custom variables here
-title = "Toucan theme"
-title_pic = "/favicon.ico"
+title = "Tukan theme"
+title_pic = "$BASE_URL/favicon.ico"
 description = "Theme for Zola inspired from Pelican website theme"
 license = """Content under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA</a> Licence"""
 
