@@ -2,9 +2,9 @@
 
 A light theme for Zola adapted from Pelican.
 
-![Live Preview](https://salif.github.io/zola-themes-collection/demo/tukan/)
+[Live Preview](https://salif.github.io/zola-themes-collection/demo/tukan/)
 
-![Screenshot](./screenshot.png)
+![Screenshot](https://codeberg.org/salif/tukan/raw/branch/master/screenshot.png)
 
 ## Installation
 
