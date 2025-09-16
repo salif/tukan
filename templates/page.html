@@ -4,7 +4,7 @@
 {% block description %}{{ page.description }}{% endblock description %} {# TODO use truncate html when ready and no description available #}
 
 {% block head %}
-{% if page.extra.katex %}
+{% if page.extra.math or page.extra.katex %}
 {{ macros::katex() }}
 {% endif %}
 {% endblock head %}

@@ -1,0 +1,14 @@
+{
+  "name": "tukan",
+  "scripts": {
+    "katex:clean": "rm -rf static/katex && mkdir static/katex static/katex/fonts static/katex/contrib",
+    "katex:copy-dist": "cp node_modules/katex/dist/*.min.* static/katex/ && cp node_modules/katex/dist/README.md static/katex/KaTeX.md",
+    "katex:copy-contrib": "cp node_modules/katex/dist/contrib/*.min.* static/katex/contrib/",
+    "katex:copy-fonts": "cp node_modules/katex/dist/fonts/* static/katex/fonts/",
+    "katex:sync": "pnpm run katex:clean && pnpm run katex:copy-dist && pnpm run katex:copy-contrib && pnpm run katex:copy-fonts"
+  },
+  "packageManager": "pnpm@10.16.1",
+  "dependencies": {
+    "katex": "^0.16.22"
+  }
+}
