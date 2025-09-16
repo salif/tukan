@@ -58,6 +58,18 @@
 </script>
 {% endmacro katex %}
 
+{% macro goatcounter() %}
+{%- if config.base_url is starting_with("https://salif.github.io/") %}
+  {%- set endpoint = "https://sgi.goatcounter.com/count" %}
+{%- elif config.extra.goatcounter.endpoint %}
+  {%- set endpoint = config.extra.goatcounter.endpoint %}
+{%- endif %}
+{%- if endpoint %}
+<script data-goatcounter="{{ endpoint | escape_xml | safe }}" async
+  src="{{ get_url(path=`gc.min.js`, cachebust=true) }}"></script>
+{%- endif %}
+{% endmacro %}
+
 {%- macro tr(key, d) %}{%
   if d[key]["value"] %}{{
     d[key]["value"] | safe }}{%

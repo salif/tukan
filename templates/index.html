@@ -8,6 +8,7 @@
   <title>{% block title %}{{ config.title | default(value="") }}{% endblock title %}</title>
   <meta name="description" content="{% block description %}{{ config.description | default(value=``) }}{% endblock description %}">
   <link rel="stylesheet" type="text/css" href="{{ get_url(path=`base.css`, cachebust=true) }}">
+  {% if current_url %}<link rel="canonical" href="{{ current_url | escape_xml | safe }}">{% endif %}
   {% block head %}{% endblock head %}
 </head>
 <body>
@@ -18,5 +19,6 @@
     <main>{% block main %}{% endblock main %}</main>
     <footer>{% include "footer.html" %}</footer>
   </div>
+  {{ macros::goatcounter() }}
 </body>
 </html>
