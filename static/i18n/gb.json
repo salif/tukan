@@ -1,16 +1,16 @@
 {
 	"language_name": {
-		"value": "български",
+		"value": "Globasa",
 		"fallback": "English",
 		"needs_edit": ""
 	},
 	"made_with": {
-		"value": "Направено със <a href=\"http://getzola.org/\">Зола</a>.",
+		"value": "",
 		"fallback": "Made with <a href=\"http://getzola.org/\">Zola</a>.",
 		"needs_edit": ""
 	},
 	"read_more": {
-		"value": "Прочетете още",
+		"value": "Doxo max to",
 		"fallback": "Read more",
 		"needs_edit": ""
 	}

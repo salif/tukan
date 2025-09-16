@@ -1,7 +1,7 @@
 {% import "macros.html" as macros %}
 {%- set g_trans = load_data(path=`i18n/`~lang~`.json`, format=`json`) %}
 <!DOCTYPE html>
-<html>
+<html lang="{{ lang }}">
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,8 +13,8 @@
 </head>
 <body>
   <div id="container">
-    <header><a href="{{ get_url(path=`/`, lang=lang) }}"><h1><img id="title_pic" alt="" src="{{
-      get_url(path=config.extra.title_pic) }}" />{{ config.title | default(value="") }}</h1></a></header>
+    <header><a href="{{ get_url(path=`/`, lang=lang) }}"><h1><img id="title_pic" alt=""
+      src="{{ get_url(path=config.extra.title_pic) }}" />{{ config.title | default(value="") }}</h1></a></header>
     <nav>{{ macros::nav() }}</nav>
     <main>{% block main %}{% endblock main %}</main>
     <footer>{% include "footer.html" %}</footer>

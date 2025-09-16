@@ -9,7 +9,7 @@ hard_link_static = false
 generate_sitemap = true
 generate_robots_txt = true
 
-title = "Tukan theme"
+title = "Tukan"
 description = "Theme for Zola inspired from Pelican website theme"
 
 [languages.bg]
