@@ -8,6 +8,8 @@ exclude_paginated_pages_in_sitemap = "all"
 hard_link_static = false
 generate_sitemap = true
 generate_robots_txt = true
+generate_feeds = true
+feed_filenames = ["rss.xml"]
 
 title = "Tukan"
 description = "Theme for Zola inspired from Pelican website theme"
@@ -28,4 +30,10 @@ build_search_index = false
 [extra]
 # Put all your custom variables here
 title_pic = "/favicon.ico"
-license = """Content under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA</a> Licence"""
+
+[extra.footer]
+copyright = """Content under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA</a> Licence."""
+site_source = "https://codeberg.org/salif/tukan"
+
+[extra.languages.bg]
+locale = "bg_BG"

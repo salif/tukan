@@ -22,7 +22,7 @@
 {% for article in feed %}
   <a href="{{ article.permalink | escape_xml | safe }}" class="feed-link">
     <div>
-      <div class="date">{{ article.date }}</div>
+      <div class="date">{{ self::format_date(from=article.date) }}</div>
       <h3>{{ article.title }}</h3>
       <p>
         {% if article.description %}
@@ -68,7 +68,15 @@
 <script data-goatcounter="{{ endpoint | escape_xml | safe }}" async
   src="{{ get_url(path=`gc.min.js`, cachebust=true) }}"></script>
 {%- endif %}
-{% endmacro %}
+{% endmacro goatcounter %}
+
+{%- macro format_date(from) %}
+  {%- if config.extra.languages[lang].locale %}
+    {{- from | date(format=`%v`, locale=config.extra.languages[lang].locale) }}
+  {%- else %}
+    {{- from }}
+  {%- endif %}
+{%- endmacro format_date -%}
 
 {%- macro tr(key, d) %}{%
   if d[key]["value"] %}{{

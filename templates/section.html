@@ -16,7 +16,7 @@
   {% set feed = section.pages | slice(start=1) %}
   {% if article %}
   <section class="card preview">
-      <div class="date">{{ article.date }}</div>
+      <div class="date">{{ macros::format_date(from=article.date) }}</div>
       <h1><a href="{{ article.permalink | escape_xml | safe }}">{{ article.title }}</a></h1>
       <div>{{ article.description }}</div>
       <br>
