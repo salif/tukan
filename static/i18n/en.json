@@ -2,10 +2,19 @@
 	"language_name": {
 		"value": "English"
 	},
-	"made_with": {
-		"value": "Made with <a href=\"http://getzola.org/\">Zola</a>."
-	},
 	"read_more": {
 		"value": "Read more"
+	},
+	"made_with": {
+		"value": "Made with <a href=\"http://getzola.org/\">Zola</a>"
+	},
+	"theme_name": {
+		"value": "<a href=\"https://codeberg.org/salif/tukan\">Tukan</a>"
+	},
+	"site_source": {
+		"value": "Site source"
+	},
+	"feed": {
+		"value": "$NAME flux"
 	}
 }

@@ -8,15 +8,19 @@ exclude_paginated_pages_in_sitemap = "all"
 hard_link_static = false
 generate_sitemap = true
 generate_robots_txt = true
-generate_feeds = true
-feed_filenames = ["rss.xml"]
 
 title = "Tukan"
 description = "Theme for Zola inspired from Pelican website theme"
+build_search_index = false
+generate_feeds = true
+feed_filenames = ["rss.xml"]
 
 [languages.bg]
 title = "Тукан"
 description = "Тема за сайтове за Зола"
+build_search_index = false
+generate_feeds = true
+feed_filenames = ["rss.xml"]
 
 # Whether to do syntax highlighting
 # Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
@@ -24,16 +28,12 @@ description = "Тема за сайтове за Зола"
 highlight_code = true
 highlight_theme = "base16-ocean-light"
 
-# Whether to build a search index to be used later on by a JavaScript library
-build_search_index = false
-
 [extra]
 # Put all your custom variables here
 title_pic = "/favicon.ico"
-
-[extra.footer]
 copyright = """Content under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA</a> Licence."""
 site_source = "https://codeberg.org/salif/tukan"
 
 [extra.languages.bg]
 locale = "bg_BG"
+copyright = """Съдържанието е под лиценз <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.bg">CC BY-SA</a>."""

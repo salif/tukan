@@ -1,7 +1,5 @@
 #!/usr/bin/env node
 /**
- * sync-locales.js
- *
  * Synchronize all .json localization files in a directory using en.json as the source.
  *
  * Usage:
@@ -12,9 +10,9 @@
  * - Adds missing keys to other json files with { fallback: <enValue>, value: "", needs_edit: "" }
  * - Removes keys that are not present in en.json
  * - When en.json value changed (compared with other.fallback), does:
- *      other.fallback = <new English value>   (always)
+ *      other.fallback = <enValue>   (always)
  *      if other.needs_edit is empty AND other.value is non-empty:
- *          other.needs_edit = <old English value>
+ *          other.needs_edit = <fallback>
  *      else:
  *          other.needs_edit remains unchanged
  *   The translation (other.value) is preserved.
@@ -124,18 +122,18 @@ async function syncDir(dirPath) {
 				const existing = otherData[k];
 				// If existing.fallback differs from enValue, treat that as an edited English source.
 				if (existing.fallback !== enValue) {
-					// old English should be the previous fallback if present, otherwise attempt to use needs_edit or value.
-					const oldEnglish = existing.fallback || existing.needs_edit || '';
+					// origFallback should be the previous fallback if present, otherwise attempt to use needs_edit.
+					const origFallback = existing.fallback || existing.needs_edit || '';
 
 					// Determine new needs_edit according to the rule:
-					// set to oldEnglish ONLY IF needs_edit is empty AND value is non-empty, otherwise leave needs_edit unchanged.
+					// set to origFallback ONLY IF needs_edit is empty AND value is non-empty, otherwise leave needs_edit unchanged.
 					const shouldSetNeedsEdit = (existing.needs_edit === '' && existing.value !== '');
-					const newNeedsEdit = shouldSetNeedsEdit ? oldEnglish : existing.needs_edit;
+					const newNeedsEdit = shouldSetNeedsEdit ? origFallback : existing.needs_edit;
 
 					newOther[k] = {
 						value: existing.value || '',    // keep translation
 						fallback: enValue,              // new English
-						needs_edit: newNeedsEdit          // set to old English (so translators can see what changed)
+						needs_edit: newNeedsEdit          // set to origFallback (so translators can see what changed)
 					};
 					changes.updated.push(k);
 				} else {

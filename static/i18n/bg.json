@@ -4,14 +4,29 @@
 		"fallback": "English",
 		"needs_edit": ""
 	},
-	"made_with": {
-		"value": "Направено със <a href=\"http://getzola.org/\">Зола</a>.",
-		"fallback": "Made with <a href=\"http://getzola.org/\">Zola</a>.",
-		"needs_edit": ""
-	},
 	"read_more": {
 		"value": "Прочетете още",
 		"fallback": "Read more",
+		"needs_edit": ""
+	},
+	"made_with": {
+		"value": "Направено със <a href=\"http://getzola.org/\">Зола</a>",
+		"fallback": "Made with <a href=\"http://getzola.org/\">Zola</a>",
+		"needs_edit": ""
+	},
+	"theme_name": {
+		"value": "<a href=\"https://codeberg.org/salif/tukan\">Тукан</a>",
+		"fallback": "<a href=\"https://codeberg.org/salif/tukan\">Tukan</a>",
+		"needs_edit": ""
+	},
+	"site_source": {
+		"value": "Код на сайта",
+		"fallback": "Site source",
+		"needs_edit": ""
+	},
+	"feed": {
+		"value": "$NAME емисия",
+		"fallback": "$NAME flux",
 		"needs_edit": ""
 	}
 }

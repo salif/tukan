@@ -1,7 +1,24 @@
 <div class="card">
-{{ macros::tr(key=`made_with`, d=g_trans) }}
+{{ macros::tr(key=`made_with`, d=g_trans) }} &amp; {{ macros::tr(key=`theme_name`, d=g_trans) }}.
+{%- if config.extra.languages[lang].copyright %}
+	{{ config.extra.languages[lang].copyright | safe }}
+{%- elif config.extra.copyright %}
+	{{ config.extra.copyright | safe }}
+{%- endif %}
+{%- if config.extra.site_source %}
+	<a href="{{ config.extra.site_source | safe }}">{{ macros::tr(key=`site_source`, d=g_trans) }}</a>.
+{%- endif %}
+{%- if config.generate_feeds or section.generate_feeds %}
+	{%- for feed_filename in config.feed_filenames %}
+		{%- if feed_filename is ending_with("atom.xml") %}
+	<a href="{{ get_url(path=feed_filename, lang=lang) }}" rel="alternate" type="application/atom+xml">{{
+		macros::tr(key=`feed`, d=g_trans) | replace(from=`$NAME`, to=`Atom`) }}</a>.
+		{%- elif feed_filename is ending_with("rss.xml") %}
+	<a href="{{ get_url(path=feed_filename, lang=lang) }}" rel="alternate" type="application/rss+xml">{{
+		macros::tr(key=`feed`, d=g_trans) | replace(from=`$NAME`, to=`RSS`) }}</a>.
+		{%- else %}
+		{%- endif %}
+	{%- endfor %}
+{%- endif %}
 </div>
-<!--
-	<div id="license">{{config.extra.license | safe}} | <a href="/rss.xml">RSS</a> flux</div>
--->
 <br>

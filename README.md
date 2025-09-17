@@ -27,10 +27,12 @@ You can personalize the following options in your `config.toml`:
 ```toml
 title = ""
 description = ""
+generate_feeds = true
 
 [extra]
 title_pic = "/favicon.ico"
-license = """Content under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA</a> Licence"""
+copyright = """Content under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA</a> Licence"""
+site_source = "https://github.com/example/example"
 ```
 
 Categories will be added to the menu, and all articles from categories with
