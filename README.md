@@ -31,7 +31,7 @@ generate_feeds = true
 
 [extra]
 title_pic = "/favicon.ico"
-copyright = """Content under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA</a> Licence"""
+copyright = """Content under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA</a> Licence."""
 site_source = "https://github.com/example/example"
 ```
 
